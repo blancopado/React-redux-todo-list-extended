@@ -21,4 +21,8 @@ describe('App', () => {
 		expect(appWrapper.find("Connect(Form)").exists()).toBe(true);
 	});
 
+	it('should contain a TodoList component', () => {
+		expect(appWrapper.find("Connect(TodoList)").exists()).toBe(true);
+	});
+
 });
