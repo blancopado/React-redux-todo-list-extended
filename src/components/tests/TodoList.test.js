@@ -1,5 +1,5 @@
 import React from 'react';
-import { configure, shallow, mount } from 'enzyme';
+import { configure, shallow } from 'enzyme';
 import EnzymeAdapter from 'enzyme-adapter-react-16';
 import TodoList from '../TodoList';
 import { storeFactory } from './testUtils';
@@ -10,6 +10,7 @@ describe('TodoList', () => {
 
   const store = storeFactory([{ id: 1, text: 'todo1'}, { id: 2, text: 'todo2' }]);
   let todoListWrapper;
+
   beforeEach(() => {
     todoListWrapper = shallow(<TodoList store={store} />).dive();
   });
