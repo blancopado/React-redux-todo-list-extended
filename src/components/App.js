@@ -5,8 +5,8 @@ import TodoList from './TodoList';
 const App = () => {
   return (
     <div data-test="component-app">
-    	<Form />
-    	<TodoList />
+      <Form />
+      <TodoList />
     </div>
   )
 }
