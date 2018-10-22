@@ -1,5 +1,5 @@
 import React from 'react';
-import { configure, shallow, mount } from 'enzyme';
+import { configure, shallow } from 'enzyme';
 import EnzymeAdapter from 'enzyme-adapter-react-16';
 import Todo from '../Todo';
 
@@ -12,7 +12,7 @@ describe('Todo', () => {
   const mockOnClick = jest.fn(),
         props = { text: "Todo1", completed: false, onClick: mockOnClick };
   beforeEach(() => {
-    todoWrapper = mount(<Todo {...props} />);
+    todoWrapper = shallow(<Todo {...props} />);
     todoElt = todoWrapper.find(`[data-test='component-todo']`);
   });
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { configure, shallow, mount } from 'enzyme';
+import { configure, shallow } from 'enzyme';
 import EnzymeAdapter from 'enzyme-adapter-react-16';
 import Form from '../Form';
 import { storeFactory } from './testUtils';
