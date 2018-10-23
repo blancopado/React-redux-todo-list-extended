@@ -1,21 +1,17 @@
 import * as constants from './constants';
 import { v4 } from 'uuid';
 
-export const addTodo = todo => {
+export const addTodo = text => {
   return {
     type:  constants.ADD_TODO,
-    payload: {
-      id: v4(),
-      text: todo.text
-    }
+    id: v4(),
+    text: text
   };
 };
 
-export const toggleTodo = todoId => {
+export const toggleTodo = id => {
   return {
     type: constants.TOGGLE_TODO,
-    payload: {
-      id: todoId
-    }
+    id: id
   };
 };

@@ -2,15 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addTodo } from '../actions/todos';
 
-const Form = (props) => {
+const Form = ({ addTodo }) => {
     
   const onSubmitForm = (e) => {
     e.preventDefault();
-    const todo = {
-      text: e.target.text.value
-    }
+    const text = e.target.text.value;
+    addTodo(text);
     e.target.reset();
-    props.addTodo(todo);
   }
 
   return (

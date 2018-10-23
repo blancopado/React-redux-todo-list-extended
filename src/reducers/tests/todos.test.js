@@ -7,10 +7,8 @@ describe('Todos reducer', () => {
     const stateBefore = [];
     const action = {
       type:  constants.ADD_TODO,
-      payload: {
-        id: 1,
-        text: "Learn Webpack"
-      }
+      id: 1,
+      text: "Learn Webpack"
     };
     const stateAfter = [
       {
@@ -33,9 +31,7 @@ describe('Todos reducer', () => {
     ];
     const action = {
       type:  constants.TOGGLE_TODO,
-      payload: {
-        id: 1
-      }
+      id: 1
     };
     const stateAfter = [
       {
