@@ -17,8 +17,8 @@ describe('App', () => {
     expect(app.length).toEqual(1);
   });
 
-  it('should contain a connected Form component', () => {
-    expect(appWrapper.find("Connect(Form)").exists()).toBe(true);
+  it('should contain a connected AddTodo component', () => {
+    expect(appWrapper.find("Connect(AddTodo)").exists()).toBe(true);
   });
 
   it('should contain a connected TodoList component', () => {

@@ -2,11 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addTodo } from '../actions/todos';
 
-const Form = ({ addTodo }) => {
+const AddTodo = ({ addTodo }) => {
     
   const onSubmitForm = (e) => {
     e.preventDefault();
-    const text = e.target.text.value;
+    let text = e.target.text.value.trim();
+    if (!text) return;
     addTodo(text);
     e.target.reset();
   }
@@ -21,4 +22,4 @@ const Form = ({ addTodo }) => {
   );
 }
 
-export default connect(null, { addTodo } )(Form);
+export default connect(null, { addTodo } )(AddTodo);

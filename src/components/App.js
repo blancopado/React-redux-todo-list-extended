@@ -1,12 +1,12 @@
 import React from 'react';
-import Form from './Form';
+import AddTodo from './AddTodo';
 import VisibleTodos from './VisibleTodos';
 import FilterLinkList from './FilterLinkList';
 
 const App = () => {
   return (
     <div data-test="component-app">
-      <Form />
+      <AddTodo />
       <VisibleTodos />
       <FilterLinkList />
     </div>
