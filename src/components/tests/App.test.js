@@ -21,12 +21,12 @@ describe('App', () => {
     expect(appWrapper.find("Connect(Form)").exists()).toBe(true);
   });
 
-  it('should contain a TodoList component', () => {
+  it('should contain a connected TodoList component', () => {
     expect(appWrapper.find("Connect(TodoList)").exists()).toBe(true);
   });
 
   it('should contain a FilterLink component', () => {
-    expect(appWrapper.find("Connect(FilterLinkList)").exists()).toBe(true);
+    expect(appWrapper.find("FilterLinkList").exists()).toBe(true);
   });
 
 });
