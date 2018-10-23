@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from "prop-types";
 import Todo from './Todo';
 
-const TodoList = ({ todos, onTodoClick }) => {
+const TodoList = ({ todos, onToggleClick, onDeleteClick }) => {
 
   return (
     <div data-test="component-todolist">
@@ -10,10 +10,10 @@ const TodoList = ({ todos, onTodoClick }) => {
       {todos.map((todo) => {
         return <Todo 
                   key={todo.id}
-                  id={todo.id} 
                   text={todo.text} 
                   completed={todo.completed} 
-                  onClick={() => onTodoClick(todo.id)}
+                  onToggleClick={() => onToggleClick(todo.id)}
+                  onDeleteClick={() => onDeleteClick(todo.id)}
                 /> })}
       </ul>
     </div>
@@ -23,12 +23,12 @@ const TodoList = ({ todos, onTodoClick }) => {
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
       completed: PropTypes.bool.isRequired
     })
   ).isRequired,
-  onTodoClick: PropTypes.func.isRequired
+  onToggleClick: PropTypes.func.isRequired,
+  onDeleteClick: PropTypes.func.isRequired,
 };
 
 export default TodoList;

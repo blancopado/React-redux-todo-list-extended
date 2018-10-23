@@ -9,8 +9,9 @@ describe('Todo', () => {
 
   let todoWrapper,
       todoElt;
-  const mockOnClick = jest.fn(),
-        props = { text: "Todo1", completed: false, onClick: mockOnClick };
+  const mockOnToggleClick = jest.fn(),
+        mockOnDeleteClick = jest.fn(),
+        props = { text: "Todo1", completed: false, onToggleClick: mockOnToggleClick, onDeleteClick: mockOnDeleteClick };
   beforeEach(() => {
     todoWrapper = shallow(<Todo {...props} />);
     todoElt = todoWrapper.find(`[data-test='component-todo']`);
@@ -21,15 +22,24 @@ describe('Todo', () => {
   });
 
   it('should render the text of the Todo', () => {
-    const todoText = todoElt.text();
+    const todoText = todoElt.find('span').text();
     expect(todoText).toBe(props.text);
   });
 
   describe('when the user wants to mark a Todo as completed', () => {
 
-    it('should call the onClick function it receives from props', () => {
+    it('should call the onToggleClick function it receives from props', () => {
       todoElt.simulate('click');
-      expect(mockOnClick).toHaveBeenCalled();
+      expect(mockOnToggleClick).toHaveBeenCalled();
+    });
+    
+  });
+
+  describe('when the user wants to delete a Todo', () => {
+    
+    it('should call the onDeleteClick function it receives from props', () => {
+      todoElt.find('button').simulate('click');
+      expect(mockOnToggleClick).toHaveBeenCalled();
     });
 
   });

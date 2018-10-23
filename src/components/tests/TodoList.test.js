@@ -8,11 +8,12 @@ configure({ adapter: new EnzymeAdapter() });
 describe('TodoList', () => {
 
   const todos =  [{ id: "123", text: 'todo1', completed: false}, { id: "456", text: 'todo2', completed: false }];
-  const mockOnClick = jest.fn();
+  const mockOnToggleClick = jest.fn();
+  const mockOnDeleteClick = jest.fn();
   let todoListWrapper;
 
   beforeEach(() => {
-    todoListWrapper = shallow(<TodoList todos={todos} onTodoClick={mockOnClick} />);
+    todoListWrapper = shallow(<TodoList todos={todos} onToggleClick={mockOnToggleClick} onDeleteClick={mockOnDeleteClick} />);
   });
 
   it('should render the TodoList component', () => {

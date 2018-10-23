@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Todo = ({ id, text, completed, onClick }) => {
+const Todo = ({ text, completed, onToggleClick, onDeleteClick }) => {
   return (
     <li data-test='component-todo' 
-        onClick={onClick} 
+        onClick={onToggleClick} 
         style={{textDecoration: completed ? 'line-through' : 'none'}}>
-      {text}
+        <button onClick={onDeleteClick}>X</button>
+        <span>{text}</span>
     </li>
   )
 }

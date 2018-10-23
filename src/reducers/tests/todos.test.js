@@ -44,4 +44,32 @@ describe('Todos reducer', () => {
     expect(todos(stateBefore, action)).toEqual(stateAfter);
   });
 
+  it('should delete a Todo', () => {
+    const stateBefore = [
+      {
+        id: 1,
+        text: "Buy milk",
+        completed: true
+      },
+      {
+        id: 2,
+        text: "Call mum",
+        completed: true
+      }
+    ];
+    const action = {
+      type: constants.DELETE_TODO,
+      id: 2
+    };
+    const stateAfter = [
+      {
+        id: 1,
+        text: "Buy milk",
+        completed: true
+      }
+    ];
+
+    expect(todos(stateBefore, action)).toEqual(stateAfter);
+  });
+
 });

@@ -5,13 +5,20 @@ export const addTodo = text => {
   return {
     type:  constants.ADD_TODO,
     id: v4(),
-    text: text
+    text
   };
 };
 
 export const toggleTodo = id => {
   return {
     type: constants.TOGGLE_TODO,
-    id: id
+    id
   };
 };
+
+export const deleteTodo = id => {
+  return {
+    type: constants.DELETE_TODO,
+    id
+  }
+}

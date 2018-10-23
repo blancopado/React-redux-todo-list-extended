@@ -21,4 +21,10 @@ describe('Todos actions', () => {
     expect(actions.toggleTodo(todoId)).toEqual(expectedAction);
   });
 
+  it('should create an action to delete a Todo', () => {
+    const todoId = v4();
+    const expectedAction = { type: constants.DELETE_TODO, id: todoId };
+    expect(actions.deleteTodo(todoId)).toEqual(expectedAction);
+  });
+
 });

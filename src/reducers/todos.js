@@ -15,7 +15,7 @@ const Todo = (state, action) => {
           completed: !state.completed
         };
       }
-      return state; 
+      return state;
     default:
       return state;
   }
@@ -30,6 +30,8 @@ const Todos = (state = [], action) => {
       ];
     case constants.TOGGLE_TODO:
       return state.map(t => Todo(t, action));
+    case constants.DELETE_TODO:
+      return state.filter(todo => { return todo.id !== action.id });
     default:
       return state;
   }
