@@ -1,32 +1,32 @@
 import React from 'react';
 import { configure, shallow } from 'enzyme';
 import EnzymeAdapter from 'enzyme-adapter-react-16';
-import Form from '../Form';
+import AddTodo from '../AddTodo';
 import { storeFactory } from './testUtils';
 
 configure({ adapter: new EnzymeAdapter() });
 
-describe('Form', () => {
+describe('AddTodo', () => {
 
   const store = storeFactory({});
-  let formWrapper;
+  let addTodoWrapper;
 
   beforeEach(() => {
-    formWrapper = shallow(<Form store={store} />).dive();
+    addTodoWrapper = shallow(<AddTodo store={store} />).dive();
   });
 
   it('should render the Form component', () => {
-    const form = formWrapper.find("[data-test='component-form']");
-    expect(form.length).toEqual(1);
+    const addTodo = addTodoWrapper.find("[data-test='component-form']");
+    expect(addTodo.length).toEqual(1);
   });
 
   it('should render an input box', () => {
-    const inputBox = formWrapper.find("[data-test='input-box']");
+    const inputBox = addTodoWrapper.find("[data-test='input-box']");
     expect(inputBox.length).toEqual(1);
   });
 
   it('should render a submit input', () => {
-    const inputButton = formWrapper.find("[data-test='input-submit']");
+    const inputButton = addTodoWrapper.find("[data-test='input-submit']");
     expect(inputButton.length).toEqual(1);
   });
   
