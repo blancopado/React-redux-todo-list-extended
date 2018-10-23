@@ -29,14 +29,5 @@ describe('Form', () => {
     const inputButton = formWrapper.find("[data-test='input-submit']");
     expect(inputButton.length).toEqual(1);
   });
-
-  describe('Redux props', () => {
-
-    it("should pass 'addTodo' action creator as a function prop", () => {
-      const addTodoProp = formWrapper.instance().props.addTodo;
-      expect(addTodoProp).toBeInstanceOf(Function);
-    });
-
-  });
-
+  
 });

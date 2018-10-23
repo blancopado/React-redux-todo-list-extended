@@ -6,7 +6,7 @@ const Link = ({ active, onClick, children }) => {
     return <span data-test="component-link-span">{children}</span>
   };
   return (
-    <a href="#"
+    <a href="# "
       data-test="component-link" 
       onClick={onClick}>
       {children}

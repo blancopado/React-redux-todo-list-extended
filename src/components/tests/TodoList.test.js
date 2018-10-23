@@ -7,7 +7,7 @@ configure({ adapter: new EnzymeAdapter() });
 
 describe('TodoList', () => {
 
-  const todos =  [{ id: 1, text: 'todo1', completed: false}, { id: 2, text: 'todo2', completed: false }];
+  const todos =  [{ id: "123", text: 'todo1', completed: false}, { id: "456", text: 'todo2', completed: false }];
   const mockOnClick = jest.fn();
   let todoListWrapper;
 
