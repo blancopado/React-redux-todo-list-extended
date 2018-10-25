@@ -1,17 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
-import todos from './reducers/todos'
-import visibilityFilter from './reducers/visibilityFilter'
-import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
+import configuresStore from './configureStore';
 
-const rootReducer = combineReducers({
-  todos,
-  visibilityFilter
-});
- 
-const store = createStore(rootReducer);
+const store = configuresStore();
 
 ReactDOM.render(
   <Provider store={store}>
