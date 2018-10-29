@@ -8,9 +8,13 @@ configure({ adapter: new EnzymeAdapter() });
 describe('App', () => {
 
   let appWrapper;
+  let match = {};
+  match.params = {
+    filter: '/'
+  }
   beforeEach(() => {
-    appWrapper = shallow(<App />);
-  });
+    appWrapper = shallow(<App match={match} />);
+  }); 
 
   it('should render the App component', () => {
     const app = appWrapper.find("[data-test='component-app']");
