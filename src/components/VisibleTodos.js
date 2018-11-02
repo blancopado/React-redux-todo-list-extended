@@ -1,9 +1,11 @@
 import TodoList from './TodoList';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import { toggleTodo, deleteTodo } from '../actions/todos';
 import * as constants from '../actions/constants';
 
 const getVisibleTodos = (todos, filter) => {
+  console.log(filter);
   switch (filter) {
     case constants.SHOW_ALL:
       return todos;
@@ -22,7 +24,7 @@ const getVisibleTodos = (todos, filter) => {
 
 const mapStateToProps = (state, ownProps) => {
   return { 
-    todos: getVisibleTodos(state.todos, ownProps.filter) 
+    todos: getVisibleTodos(state.todos, ownProps.match.params.filter || constants.SHOW_ALL) 
   };
 }
 
@@ -37,9 +39,9 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const VisibleTodoList = connect(
+const VisibleTodoList = withRouter(connect(
   mapStateToProps, 
   mapDispatchToProps
-)(TodoList);
+)(TodoList));
 
 export default VisibleTodoList;

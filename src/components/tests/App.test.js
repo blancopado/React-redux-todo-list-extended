@@ -26,7 +26,7 @@ describe('App', () => {
   });
 
   it('should contain a connected TodoList component', () => {
-    expect(appWrapper.find("Connect(TodoList)").exists()).toBe(true);
+    expect(appWrapper.find("withRouter(Connect(TodoList))").exists()).toBe(true);
   });
 
   it('should contain a FilterLink component', () => {

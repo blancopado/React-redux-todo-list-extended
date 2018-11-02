@@ -3,11 +3,11 @@ import AddTodo from './AddTodo';
 import VisibleTodos from './VisibleTodos';
 import FilterLinkList from './FilterLinkList';
 
-const App = ({ match }) => {
+const App = () => {
   return (
     <div data-test="component-app">
       <AddTodo />
-      <VisibleTodos filter={match.params.filter || 'all'} />
+      <VisibleTodos />
       <FilterLinkList />
     </div>
   )
